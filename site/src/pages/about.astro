@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="About"
-  description="About Matthew Takara — background, research, and the thinking behind this site."
+  description="About Matthew Takara — civil & environmental engineering student and researcher at Carnegie Mellon University."
 >
   <h1>About</h1>
 
@@ -24,38 +24,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <section>
-    <h2>This site</h2>
+    <h2>About this site</h2>
     <p>
-      Most "sustainable" websites claim green credentials without publishing the numbers.
-      This site is an attempt to do the opposite: measure first, claim second.
-    </p>
-    <p>
-      It's built with Astro (static HTML, no server-side rendering per request), uses only
-      system fonts (zero font download cost), serves WebP/AVIF images, and defaults to
-      dark mode (lower pixel luminance on OLED screens).
-      The homepage targets under 100&nbsp;kB total transfer.
-    </p>
-    <p>
-      In a later phase, a Raspberry Pi 5 will host the site directly and a Python collector
-      will measure real wattage via a smart plug, correlate with grid carbon intensity from
-      the Electricity Maps API, and publish the result to a live dashboard here.
-    </p>
-  </section>
-
-  <section id="methodology">
-    <h2>Methodology</h2>
-    <p>
-      <em>This section will expand as the measurement layer is built out.</em>
-      The full methodology — what's measured, what's estimated, and where the
-      uncertainty lies — will live in <a href="/green">the /green page</a> once
-      the Pi and smart plug are running.
-    </p>
-    <p>
-      For now: page weight is measured in browser DevTools Network tab.
-      Carbon estimates for Cloudflare Pages use the
-      <a href="https://developers.cloudflare.com/sustainability/" rel="noopener noreferrer">
-        Cloudflare sustainability documentation
-      </a> as a starting point.
+      Built with Astro — static HTML, system fonts, no JavaScript unless it earns its place.
+      A later phase will self-host on a Raspberry Pi 5 and publish real wattage and
+      grid carbon data to a <a href="/green">live dashboard</a>.
     </p>
   </section>
 </BaseLayout>
