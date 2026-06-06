@@ -1,0 +1,73 @@
+@import "./tokens.css";
+
+/* --- Reset --------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Base ---------------------------------------------------------------- */
+html {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  /* smooth scrolling for in-page anchor links */
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100svh;          /* svh = small viewport height, avoids mobile URL-bar jank */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;                     /* pushes footer to bottom even on short pages */
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;         /* "margin-inline: auto" is the modern shorthand for "margin: 0 auto" */
+  padding: var(--space-12) var(--space-6);
+}
+
+/* --- Typography ---------------------------------------------------------- */
+h1, h2, h3, h4 {
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-xl); margin-top: var(--space-12); margin-bottom: var(--space-4); }
+h3 { font-size: var(--text-lg); margin-top: var(--space-8); margin-bottom: var(--space-2); }
+
+p { margin-bottom: var(--space-4); }
+p:last-child { margin-bottom: 0; }
+
+/* --- Links --------------------------------------------------------------- */
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+a:hover { color: var(--color-accent-dim); }
+
+/* --- Utility classes ----------------------------------------------------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}

@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# secrets — never commit these
+.env
+.env.*.local
+
+# database & data files
+data/
+*.db
+*.sqlite
+
+# macOS metadata
+.DS_Store
+
+# editor
+.vscode/settings.json

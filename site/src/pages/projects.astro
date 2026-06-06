@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    title: "Multi-node Jetson Orin Nano sensing system",
+    tags: ["embedded", "sensing", "networking"],
+    description:
+      "Distributed sensing deployment across multiple Jetson Orin Nano nodes. Covers hardware bring-up, inter-node communication, and real-time data aggregation from environmental sensors.",
+  },
+  {
+    title: "Geophone analog signal-conditioning chain",
+    tags: ["analog", "signal processing", "hardware"],
+    description:
+      "Designed and characterized an analog front-end for geophone sensors: instrumentation amplifier, bandpass filter, and ADC interface. Validated against known seismic events.",
+  },
+  {
+    title: "AI/ML internship work",
+    tags: ["machine learning", "industry"],
+    description:
+      "Applied machine learning in an industry setting. Details available on request.",
+  },
+  {
+    title: "This website",
+    tags: ["web", "sustainability", "systems"],
+    description:
+      "A personal site built around measured sustainability: static Astro build, system fonts, dark-mode-first, and (in progress) real wattage and carbon logging from a Raspberry Pi 5 host.",
+    href: "/about#methodology",
+  },
+];
+---
+
+<BaseLayout title="Projects" description="Projects by Matthew Takara — sensing systems, hardware, and more.">
+  <h1>Projects</h1>
+
+  <ul class="project-list" role="list">
+    {projects.map((p) => (
+      <li class="project-card">
+        <div class="card-header">
+          <h2 class="card-title">
+            {p.href ? <a href={p.href}>{p.title}</a> : p.title}
+          </h2>
+          <ul class="tags" role="list" aria-label="Tags">
+            {p.tags.map((t) => <li>{t}</li>)}
+          </ul>
+        </div>
+        <p>{p.description}</p>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
+
+<style>
+  .project-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+  }
+
+  .project-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-6);
+    background: var(--color-surface);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-3);
+  }
+
+  .card-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .tags li {
+    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+    color: var(--color-text-muted);
+    background: var(--color-border);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius);
+  }
+
+  p { color: var(--color-text-muted); margin: 0; }
+</style>
