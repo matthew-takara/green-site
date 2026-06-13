@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Home" description="Matthew Takara — civil & environmental engineer and researcher at Carnegie Mellon University.">
+<BaseLayout title="Home" description="Matthew Takara — PhD student and researcher at Carnegie Mellon University.">
   <section class="hero">
     <h1>Matthew Takara</h1>
     <p class="tagline">PhD student and researcher at Carnegie Mellon University. Urban sensing, embedded systems, and sustainable smart city technologies.</p>
@@ -27,31 +27,47 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
+  /* Hero bleeds edge-to-edge within the column by canceling main's padding */
   .hero {
-    padding-block: var(--space-16);
-    border-bottom: 1px solid var(--color-border);
+    margin-inline: calc(-1 * var(--space-6));
+    padding: var(--space-16) var(--space-6);
     margin-bottom: var(--space-12);
+    background: var(--color-inv-bg);
+    color: var(--color-inv-text);
+  }
+
+  .hero h1 {
+    color: var(--color-inv-text);
   }
 
   .tagline {
     margin-top: var(--space-4);
     font-size: var(--text-lg);
-    color: var(--color-text-muted);
+    color: var(--color-inv-muted);
     max-width: 50ch;
+    line-height: var(--leading-normal);
   }
 
   .intro {
     margin-bottom: var(--space-12);
+    color: var(--color-text-muted);
   }
+
+  .intro p { color: var(--color-text-muted); }
 
   .page-links {
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-8);
   }
 
   .page-links a {
     font-size: var(--text-base);
-    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color var(--transition);
   }
+  .page-links a:hover { color: var(--color-text-muted); }
 </style>

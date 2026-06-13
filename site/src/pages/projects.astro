@@ -4,98 +4,78 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const projects = [
   {
     title: "Multi-node Jetson Orin Nano sensing system",
-    tags: ["embedded", "sensing", "networking"],
+    category: "Embedded systems · sensing",
     description:
       "Distributed sensing deployment across multiple Jetson Orin Nano nodes. Covers hardware bring-up, inter-node communication, and real-time data aggregation from environmental sensors.",
   },
   {
     title: "Geophone analog signal-conditioning chain",
-    tags: ["analog", "signal processing", "hardware"],
+    category: "Analog hardware · signal processing",
     description:
       "Designed and characterized an analog front-end for geophone sensors: instrumentation amplifier, bandpass filter, and ADC interface. Validated against known seismic events.",
   },
   {
-    title: "AI/ML internship work",
-    tags: ["machine learning", "industry"],
+    title: "AI/ML internship — Honeywell Technologies",
+    category: "Machine learning · industry",
     description:
       "Applied machine learning techniques as a PhD AI/ML Engineering Intern at Honeywell Technologies. Details available on request.",
   },
   {
     title: "This website",
-    tags: ["web", "sustainability", "systems"],
+    category: "Web · systems",
     description:
-      "A personal site built around measured sustainability: static Astro build, system fonts, dark-mode-first, and (in progress) real wattage and carbon logging from a Raspberry Pi 5 host.",
-    href: "/about#methodology",
+      "A personal portfolio site built to be lightweight by default — static Astro build, system fonts, zero unnecessary JavaScript. A later phase will self-host on a Raspberry Pi 5 and publish real energy and carbon data.",
+    href: "/about",
   },
 ];
 ---
 
-<BaseLayout title="Projects" description="Projects by Matthew Takara — sensing systems, hardware, and more.">
+<BaseLayout title="Projects" description="Projects by Matthew Takara — sensing systems, embedded hardware, and more.">
   <h1>Projects</h1>
 
   <ul class="project-list" role="list">
     {projects.map((p) => (
-      <li class="project-card">
-        <div class="card-header">
-          <h2 class="card-title">
-            {p.href ? <a href={p.href}>{p.title}</a> : p.title}
-          </h2>
-          <ul class="tags" role="list" aria-label="Tags">
-            {p.tags.map((t) => <li>{t}</li>)}
-          </ul>
-        </div>
-        <p>{p.description}</p>
+      <li class="project-item">
+        <p class="category">{p.category}</p>
+        <h2 class="project-title">
+          {p.href ? <a href={p.href}>{p.title}</a> : p.title}
+        </h2>
+        <p class="description">{p.description}</p>
       </li>
     ))}
   </ul>
 </BaseLayout>
 
 <style>
+  h1 { margin-top: var(--space-12); }
+
   .project-list {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-8);
     margin-top: var(--space-8);
   }
 
-  .project-card {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: var(--space-6);
-    background: var(--color-surface);
+  .project-item {
+    padding-block: var(--space-8);
+    border-top: 1px solid var(--color-border);
   }
 
-  .card-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: var(--space-4);
-    flex-wrap: wrap;
-    margin-bottom: var(--space-3);
-  }
-
-  .card-title {
-    font-size: var(--text-base);
-    font-weight: 600;
-    margin: 0;
-  }
-
-  .tags {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-
-  .tags li {
+  .category {
     font-size: var(--text-sm);
-    font-family: var(--font-mono);
     color: var(--color-text-muted);
-    background: var(--color-border);
-    padding: 2px var(--space-2);
-    border-radius: var(--radius);
+    margin-bottom: var(--space-2);
+    letter-spacing: 0.01em;
   }
 
-  p { color: var(--color-text-muted); margin: 0; }
+  .project-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin: 0 0 var(--space-3);
+    line-height: var(--leading-tight);
+  }
+
+  .description {
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: 58ch;
+  }
 </style>

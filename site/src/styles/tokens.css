@@ -1,57 +1,48 @@
-/*
-  Design tokens — CSS custom properties shared across the entire site.
-  All colours, spacing, and type choices live here so changing a value
-  once propagates everywhere that uses it.
-*/
-
 :root {
   /* --- Colour palette -------------------------------------------------- */
-  /* Dark green-black backgrounds — the "green" is subtle, not garish */
-  --color-bg:           #0c1210;
-  --color-surface:      #141f1b;
-  --color-border:       #1e2e29;
+  --color-bg:           #fafaf8;   /* warm off-white */
+  --color-surface:      #f2f0ec;   /* slightly deeper off-white */
+  --color-border:       #e0ddd8;   /* subtle dividers */
+  --color-text:         #141412;   /* near-black, slightly warm */
+  --color-text-muted:   #78746e;   /* mid-gray */
 
-  /* Text */
-  --color-text:         #dde8e4;
-  --color-text-muted:   #7fa89e;
-
-  /* Accent — used for links, highlights, the carbon badge */
-  --color-accent:       #4ade80;   /* green-400 */
-  --color-accent-dim:   #16a34a;   /* green-600, for hover states */
+  /* Inverted — used for the homepage hero block */
+  --color-inv-bg:       #141412;
+  --color-inv-text:     #f5f3ef;
+  --color-inv-muted:    #9a9590;
 
   /* --- Typography ------------------------------------------------------- */
-  /* System font stack: uses whatever the OS ships, zero download cost */
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas,
                monospace;
 
-  --text-sm:   0.875rem;  /* 14px */
-  --text-base: 1rem;      /* 16px */
-  --text-lg:   1.25rem;   /* 20px */
-  --text-xl:   1.5rem;    /* 24px */
-  --text-2xl:  2rem;      /* 32px */
-  --text-3xl:  2.75rem;   /* 44px */
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.375rem;
+  --text-2xl:  1.75rem;
+  --text-3xl:  2.5rem;
 
-  --leading-tight:  1.25;
-  --leading-normal: 1.6;
+  --leading-tight:  1.2;
+  --leading-normal: 1.65;
 
-  /* --- Spacing scale ---------------------------------------------------- */
-  --space-1:  0.25rem;   /*  4px */
-  --space-2:  0.5rem;    /*  8px */
-  --space-3:  0.75rem;   /* 12px */
-  --space-4:  1rem;      /* 16px */
-  --space-6:  1.5rem;    /* 24px */
-  --space-8:  2rem;      /* 32px */
-  --space-12: 3rem;      /* 48px */
-  --space-16: 4rem;      /* 64px */
-  --space-24: 6rem;      /* 96px */
+  /* --- Spacing ---------------------------------------------------------- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
 
   /* --- Layout ----------------------------------------------------------- */
-  --max-width:      68ch;   /* prose width; "ch" = width of "0" in current font */
+  --max-width:      68ch;
   --max-width-wide: 90rem;
-  --radius:         4px;
+  --radius:         3px;
 
   /* --- Transitions ------------------------------------------------------ */
-  --transition: 150ms ease;
+  --transition: 120ms ease;
 }
