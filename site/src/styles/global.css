@@ -28,9 +28,7 @@ main {
   width: 100%;
   max-width: var(--max-width);
   margin-inline: auto;
-  /* No top padding — hero handles its own spacing flush with the nav */
-  padding-inline: var(--space-6);
-  padding-bottom: var(--space-16);
+  padding: var(--space-12) var(--space-6) var(--space-16);
 }
 
 /* --- Typography ---------------------------------------------------------- */
