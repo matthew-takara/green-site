@@ -1,15 +1,15 @@
 :root {
   /* --- Colour palette -------------------------------------------------- */
-  --color-bg:           #fafaf8;   /* warm off-white */
-  --color-surface:      #f2f0ec;   /* slightly deeper off-white */
-  --color-border:       #e0ddd8;   /* subtle dividers */
-  --color-text:         #141412;   /* near-black, slightly warm */
-  --color-text-muted:   #78746e;   /* mid-gray */
+  --color-bg:           #f5f0e8;   /* warm cream — paper */
+  --color-surface:      #ede8de;   /* slightly deeper cream */
+  --color-border:       #d9d0c0;   /* warm tan dividers */
+  --color-text:         #1c1814;   /* dark brown-black — ink */
+  --color-text-muted:   #8a7d6b;   /* warm gray-brown */
 
-  /* Inverted — used for the homepage hero block */
-  --color-inv-bg:       #141412;
-  --color-inv-text:     #f5f3ef;
-  --color-inv-muted:    #9a9590;
+  /* Inverted — kept in tokens in case needed later */
+  --color-inv-bg:       #1c1814;
+  --color-inv-text:     #f5f0e8;
+  --color-inv-muted:    #9a8f80;
 
   /* --- Typography ------------------------------------------------------- */
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
